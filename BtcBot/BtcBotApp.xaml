@@ -1,9 +1,8 @@
-﻿<Application x:Class="BtcBot.App"
+﻿<Application x:Class="BtcBot.BtcBotApp"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:BtcBot"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:BtcBot">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>
