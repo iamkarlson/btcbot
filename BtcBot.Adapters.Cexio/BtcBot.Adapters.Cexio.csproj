@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4B7581B8-8328-4B0E-A8B3-7439DCFCA45B}</ProjectGuid>
+    <ProjectGuid>{25AD0D5C-B6AF-4967-B341-176FB78C35D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BtcBot.Models</RootNamespace>
-    <AssemblyName>BtcBot.Models</AssemblyName>
+    <RootNamespace>BtcBot.Adapters.Cexio</RootNamespace>
+    <AssemblyName>BtcBot.Adapters.Cexio</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,13 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiOperation.cs" />
-    <Compile Include="Currency.cs" />
-    <Compile Include="CurrencyCodes.cs" />
-    <Compile Include="CurrencyList.cs" />
-    <Compile Include="PriceDto.cs" />
+    <Compile Include="CexioApiAdapter.cs" />
+    <Compile Include="LastPriceDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stock.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BtcBot.Adapters.BaseAdapter\BtcBot.Adapters.BaseAdapter.csproj">
+      <Project>{98461A62-9F5F-4AE9-8681-A29A4A0991B9}</Project>
+      <Name>BtcBot.Adapters.BaseAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BtcBot.Contracts\BtcBot.Contracts.csproj">
+      <Project>{901E4C08-E5F5-4FB2-832A-2717DE58FAE3}</Project>
+      <Name>BtcBot.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BtcBot.Models\BtcBot.Models.csproj">
+      <Project>{4B7581B8-8328-4B0E-A8B3-7439DCFCA45B}</Project>
+      <Name>BtcBot.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,5 +14,16 @@ namespace BtcBot.Models {
         public CurrencyCodes SellingCode { get; set; }
 
         public DateTime CreationDate { get; set; }
+
+        public PriceDto() {
+        }
+
+        public PriceDto(Stock stock, decimal dataLprice, string source) {
+            SellingCode = stock.SellingCode;
+            BuyingCode = stock.BuyingCode;
+            Price = dataLprice;
+            SourceName = source;
+            CreationDate = DateTime.Now;
+        }
     }
 }

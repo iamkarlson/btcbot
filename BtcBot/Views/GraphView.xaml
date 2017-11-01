@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:BtcBot"
         xmlns:viewModels="clr-namespace:BtcBot.ViewModels"
         mc:Ignorable="d"
-        d:DesignHeight="300" d:DesignWidth="300"
-        Title="GraphView" d:DataContext="{d:DesignInstance viewModels:GraphViewModel}">
+        d:DesignHeight="300" d:DesignWidth="505"
+        MinHeight="300" MinWidth="540"
+        Title="{Binding Title}" d:DataContext="{d:DesignInstance viewModels:GraphViewModel}">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -24,6 +25,8 @@
             <Label Content="Choose a stock"
                    VerticalAlignment="Center" HorizontalAlignment="Center" />
             <ComboBox Grid.Column="1" Height="20"
+                      SelectedItem="{Binding SelectedStock}"
+
                       VerticalAlignment="Center" ItemsSource="{Binding Stocks}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -31,10 +34,37 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <Button Content="Start" Grid.Column="2" Width="75" Height="20"
-                    VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Grid Grid.Column="2">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button Content="Start" Grid.Row="0" Width="75" Height="20"
+                        VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding Start}" />
+                <Button Content="Stop" Grid.Row="1" Width="75" Height="20"
+                        VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding Stop}" />
+            </Grid>
         </Grid>
-        <Grid Grid.Row="1" />
+        <Grid Grid.Row="1">
+            <ListView x:Name="PricesListView" ItemsSource="{Binding Prices,Mode=OneWayToSource}">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="VerticalContentAlignment" Value="Top" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Source" Width="120" DisplayMemberBinding="{Binding SourceName}" />
+                        <GridViewColumn Header="Creation Date" Width="150"
+                                        DisplayMemberBinding="{Binding CreationDate, StringFormat='yyyy-MM-dd HH:mm:ss.fff'}" />
+                        <GridViewColumn Header="Buying" Width="50" DisplayMemberBinding="{Binding BuyingCode}" />
+                        <GridViewColumn Header="Selling" Width="50" DisplayMemberBinding="{Binding SellingCode}" />
+                        <GridViewColumn Header="Price" Width="150" DisplayMemberBinding="{Binding Price}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
 
     </Grid>
 </Window>

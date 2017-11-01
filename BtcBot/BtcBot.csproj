@@ -153,6 +153,22 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BtcBot.Adapters.BaseAdapter\BtcBot.Adapters.BaseAdapter.csproj">
+      <Project>{98461a62-9f5f-4ae9-8681-a29a4a0991b9}</Project>
+      <Name>BtcBot.Adapters.BaseAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BtcBot.Adapters.Cexio\BtcBot.Adapters.Cexio.csproj">
+      <Project>{25AD0D5C-B6AF-4967-B341-176FB78C35D0}</Project>
+      <Name>BtcBot.Adapters.Cexio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BtcBot.Contracts\BtcBot.Contracts.csproj">
+      <Project>{901e4c08-e5f5-4fb2-832a-2717de58fae3}</Project>
+      <Name>BtcBot.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BtcBot.Core\BtcBot.Core.csproj">
+      <Project>{4B953229-788F-4D14-B624-83930DAD7C1E}</Project>
+      <Name>BtcBot.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BtcBot.Models\BtcBot.Models.csproj">
       <Project>{4B7581B8-8328-4B0E-A8B3-7439DCFCA45B}</Project>
       <Name>BtcBot.Models</Name>

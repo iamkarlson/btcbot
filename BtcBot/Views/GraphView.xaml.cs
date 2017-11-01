@@ -11,11 +11,24 @@ namespace BtcBot.Views {
     public partial class GraphView: Window {
         [Dependency]
         public GraphViewModel ViewModel {
-            set { DataContext = value; }
+            set {
+                DataContext = value;
+                PricesListView.ItemsSource = value.Prices;
+                value.PropertyChanged += (sender, args) => {
+                    PricesListView.UpdateLayout();
+                    Refresh(PricesListView);
+                };
+            }
         }
 
         public GraphView() {
             InitializeComponent();
         }
+
+        public static void Refresh(DependencyObject obj) {
+            obj.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.ApplicationIdle, (NoArgDelegate) delegate { });
+        }
+
+        private delegate void NoArgDelegate();
     }
 }

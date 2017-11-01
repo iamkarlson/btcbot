@@ -11,6 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtcBot.Services", "BtcBot.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtcBot.Contracts", "BtcBot.Contracts\BtcBot.Contracts.csproj", "{901E4C08-E5F5-4FB2-832A-2717DE58FAE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtcBot.Core", "BtcBot.Core\BtcBot.Core.csproj", "{4B953229-788F-4D14-B624-83930DAD7C1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BtcBot.Adapters", "BtcBot.Adapters", "{2F096476-F12E-4711-9C01-1B5C6B8A4697}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtcBot.Adapters.Cexio", "BtcBot.Adapters.Cexio\BtcBot.Adapters.Cexio.csproj", "{25AD0D5C-B6AF-4967-B341-176FB78C35D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtcBot.Adapters.BaseAdapter", "BtcBot.Adapters.BaseAdapter\BtcBot.Adapters.BaseAdapter.csproj", "{98461A62-9F5F-4AE9-8681-A29A4A0991B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +41,25 @@ Global
 		{901E4C08-E5F5-4FB2-832A-2717DE58FAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{901E4C08-E5F5-4FB2-832A-2717DE58FAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{901E4C08-E5F5-4FB2-832A-2717DE58FAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B953229-788F-4D14-B624-83930DAD7C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B953229-788F-4D14-B624-83930DAD7C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B953229-788F-4D14-B624-83930DAD7C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B953229-788F-4D14-B624-83930DAD7C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25AD0D5C-B6AF-4967-B341-176FB78C35D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25AD0D5C-B6AF-4967-B341-176FB78C35D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25AD0D5C-B6AF-4967-B341-176FB78C35D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25AD0D5C-B6AF-4967-B341-176FB78C35D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98461A62-9F5F-4AE9-8681-A29A4A0991B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98461A62-9F5F-4AE9-8681-A29A4A0991B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98461A62-9F5F-4AE9-8681-A29A4A0991B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98461A62-9F5F-4AE9-8681-A29A4A0991B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{25AD0D5C-B6AF-4967-B341-176FB78C35D0} = {2F096476-F12E-4711-9C01-1B5C6B8A4697}
+		{98461A62-9F5F-4AE9-8681-A29A4A0991B9} = {2F096476-F12E-4711-9C01-1B5C6B8A4697}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BEF727C4-8F37-41E0-9DD4-7AE8054C2EEF}
